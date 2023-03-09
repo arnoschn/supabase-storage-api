@@ -5,4 +5,5 @@ export const transformationOptionsSchema = {
   resize: { type: 'string', enum: ['cover', 'contain', 'fill'] },
   format: { type: 'string', enum: ['origin', 'avif', 'webp', 'jpeg', 'png'] },
   quality: { type: 'integer', minimum: 20, maximum: 100 },
+  preset: {type:'string'}
 } as const
