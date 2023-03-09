@@ -18,6 +18,7 @@ export interface TransformOptions {
   format?: 'origin' | 'avif' | 'webp' | 'jpeg' | 'png'
   quality?: number
   dpr?: number
+  preset?: string
 }
 
 const {
