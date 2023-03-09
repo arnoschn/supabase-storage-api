@@ -17,6 +17,7 @@ export interface TransformOptions {
   resize?: 'cover' | 'contain' | 'fill'
   format?: 'origin' | 'avif' | 'webp' | 'jpeg' | 'png'
   quality?: number
+  dpr?: number
 }
 
 const {
@@ -110,7 +111,9 @@ export class ImageRenderer extends Renderer {
     if (options.quality) {
       segments.push(`quality:${options.quality}`)
     }
-
+    if (options.dpr) {
+      segments.push(`dpr:${options.dpr}`)
+    }
     if (options.format && options.format !== 'origin') {
       segments.push(`format:${options.format}`)
     }
@@ -160,6 +163,9 @@ export class ImageRenderer extends Renderer {
           break
         case 'width':
           all.width = parseInt(value, 10)
+          break
+        case 'width':
+          all.dpr = parseInt(value, 10)
           break
         case 'resize':
           all.resize = value
